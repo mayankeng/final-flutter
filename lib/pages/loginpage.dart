@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_new/utils/routes.dart';
 
 class loginpage extends StatelessWidget {
   const loginpage({super.key});
@@ -11,48 +12,51 @@ class loginpage extends StatelessWidget {
         children: [
           // Image.asset("assets/image/login_image.png"),
           SizedBox(
-            height: 320.0,
+            height: 220.0,
           ),
           Text("welcome",style: TextStyle( 
             fontSize: 25,
             fontWeight: FontWeight.bold
           ),),
           SizedBox(
-            height: 20.0,
+            height: 30.0,
           ),
 
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0 , horizontal: 32.0),
-          child: Column(
-            children: [
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                TextFormField(
+                decoration: InputDecoration(
+                  hintText: "enter username",
+                  labelText: "username",
+                ),
+              ),
               TextFormField(
-              decoration: InputDecoration(
-                hintText: "enter username",
-                labelText: "username",
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: "enter password",
+                  labelText: "password",
+                ),
               ),
+              SizedBox(
+              height: 30.0,
             ),
-            TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: "enter password",
-                labelText: "password",
-              ),
-            ),
-            SizedBox(
-            height: 20.0,
-          ),
-
-          ElevatedButton
-          (
-            onPressed: () 
-            {
-            print("Hi mayank");
-          },
-           child: Text("LOGIN"),
-            style: TextButton.styleFrom()
-            )
           
-            ],
+            ElevatedButton
+            (
+              onPressed: () 
+              {
+              Navigator.pushNamed(context, myroutes.homeroute);
+            },
+             child: Text("LOGIN"),
+              style: TextButton.styleFrom(minimumSize: Size(100, 30))
+              
+              )
+            
+              ],
+            ),
           ),
         )
         ],
