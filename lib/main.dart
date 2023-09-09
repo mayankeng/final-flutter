@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_new/pages/homepage.dart';
 import 'package:flutter_application_new/pages/loginpage.dart';
 
+
 void main(){
   runApp(Myapp());
 }
@@ -16,7 +17,8 @@ class Myapp extends StatelessWidget {
       // home: home page(),
       themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple
+        primarySwatch: Colors.deepPurple,
+        
       ), 
       darkTheme: ThemeData(
         brightness: Brightness.dark,
