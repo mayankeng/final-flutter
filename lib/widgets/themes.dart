@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
 
 class Mytheme{
-  static ThemeData get lighttheme {
+  static ThemeData get lighttheme  {
   return ThemeData(
     primarySwatch: Colors.deepPurple,
     appBarTheme: AppBarTheme(
