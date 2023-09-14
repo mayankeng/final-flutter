@@ -16,7 +16,8 @@ import 'package:flutter_application_new/widgets/drawer.dart';
       ),
         body: Center(
           child: Container(
-            child: Text("welcome to $days days $temp")
+            child: Text(context.runtimeType.toString())
+            // Text("welcome to $days days $temp"),
             )
             ),
           drawer: const MyDrawer(),
