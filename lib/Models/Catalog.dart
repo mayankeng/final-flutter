@@ -4,7 +4,7 @@
 
 // static can be used directly using catalog models 
 class catalogmodels{
-  static final items = [
+  static  List<Item> items = [
     Item(
     id: 001, 
     name: "iphone 12 pro", 
@@ -29,6 +29,19 @@ class Item
   
 
   Item({required this.id, required this.name, required this.desc, required this.price, required this.color, required this.image});
+
+ factory Item.fromMap(Map<String, dynamic> map){
+   return Item(
+    id: map["id"],
+    name: map["name"],
+    desc: map["desc"],
+    price: map["price"],
+    color: map["color"],
+    image: map["image"],
+
+   );
+}
+
 }
 
 // Item(this.id,this.name,this.desc,this.price,this.color, );
