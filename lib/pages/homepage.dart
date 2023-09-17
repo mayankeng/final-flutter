@@ -54,11 +54,41 @@ class _homepageState extends State<homepage> {
       ),
         body:  Padding(
             padding: const EdgeInsets.all(19.0),
-            child: (catalogmodels.items !=null && catalogmodels.items.isNotEmpty)? ListView.builder(
-              itemCount: catalogmodels.items.length,
+            child: (catalogmodels.items !=null && catalogmodels.items.isNotEmpty)? 
+            GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2 , mainAxisSpacing: 15, crossAxisSpacing: 12), 
               itemBuilder: (context, index) {
-                return ItemWidget(item: catalogmodels.items[index],);
+                final item = catalogmodels.items[index];
+                return Card(
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10)),
+                  child: GridTile(
+                    header: Container(
+                      child: Text(item.name, style: TextStyle(color: Colors.white),),
+                      padding: EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple
+                      ),
+                      // color: Colors.deepPurple,
+                      
+                      ),
+                    footer: Container(
+                      child: Text(item.price.toString(), style: TextStyle(color: Colors.white),),
+                      padding: EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.deepOrange
+                      ),
+                      // color: Colors.deepPurple,
+                      
+                      ),,
+                    child: Image.network(item.image)));
               },
+              itemCount: catalogmodels.items.length,
+            // ListView.builder(
+            //   itemCount: catalogmodels.items.length,
+            //   itemBuilder: (context, index) {
+            //     return ItemWidget(item: catalogmodels.items[index],);
+            //   },
             ):Center(child: CircularProgressIndicator(),)
           ),
          
